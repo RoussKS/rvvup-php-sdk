@@ -5,8 +5,8 @@
          bootstrap="vendor/autoload.php"
          colors="true"
          convertErrorsToExceptions="true"
-         failOnNotice="false"
-         failOnWarning="false"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false">
     <coverage processUncoveredFiles="true">
