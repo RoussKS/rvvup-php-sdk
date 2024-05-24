@@ -9,10 +9,6 @@ use Rvvup\Sdk\GraphQlSdk;
 
 class AbstractGraphQlSdkTestCase extends TestCase
 {
-    /**
-     * @param $adapterStub
-     * @return \Rvvup\Sdk\GraphQlSdk
-     */
     protected function createGraphQlSdk($adapterStub): GraphQlSdk
     {
         return new GraphQlSdk(
