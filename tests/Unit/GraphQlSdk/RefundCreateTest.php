@@ -10,6 +10,10 @@ use Rvvup\Sdk\Exceptions\NetworkException;
 use Rvvup\Sdk\Factories\Inputs\RefundCreateInputFactory;
 use Rvvup\Sdk\Response;
 
+/**
+ * @test
+ * @group refund
+ */
 class RefundCreateTest extends AbstractGraphQlSdkTestCase
 {
     private $refundCreateData = [
@@ -26,10 +30,15 @@ class RefundCreateTest extends AbstractGraphQlSdkTestCase
     ];
 
     /**
+     * @test
+     * @group refund
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_successful_refund_call(): void
+    public function assert_successful_refund_call(): void
     {
         $curlStub = $this->createStub(Curl::class);
 
@@ -51,10 +60,14 @@ class RefundCreateTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_false_on_empty_response(): void
+    public function assert_false_on_empty_response(): void
     {
         $curlStub = $this->createStub(Curl::class);
 
@@ -76,10 +89,14 @@ class RefundCreateTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_exception_on_non_2xx_response_code(): void
+    public function assert_exception_on_non_2xx_response_code(): void
     {
         $this->expectException(Exception::class);
 
@@ -103,10 +120,14 @@ class RefundCreateTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_network_exception_on_5xx_response_code(): void
+    public function assert_network_exception_on_5xx_response_code(): void
     {
         $this->expectException(NetworkException::class);
 

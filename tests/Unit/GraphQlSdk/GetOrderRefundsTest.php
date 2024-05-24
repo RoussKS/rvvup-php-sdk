@@ -10,15 +10,25 @@ use Rvvup\Sdk\Exceptions\NetworkException;
 use Rvvup\Sdk\Response;
 use Rvvup\Sdk\Tests\HelperTrait;
 
+/**
+ * @test
+ * @group order
+ * @group refund
+ */
 class GetOrderRefundsTest extends AbstractGraphQlSdkTestCase
 {
     use HelperTrait;
 
     /**
+     * @test
+     * @group refund
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_successful_get_order_refunds_call(): void
+    public function assert_successful_get_order_refunds_call(): void
     {
         $curlStub = $this->createStub(Curl::class);
 
@@ -37,10 +47,15 @@ class GetOrderRefundsTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     * @group refund
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_successful_result_get_order_refunds_call(): void
+    public function assert_successful_result_get_order_refunds_call(): void
     {
         $curlStub = $this->createStub(Curl::class);
 
@@ -61,10 +76,14 @@ class GetOrderRefundsTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_false_on_empty_response(): void
+    public function assert_false_on_empty_response(): void
     {
         $curlStub = $this->createStub(Curl::class);
 
@@ -78,10 +97,14 @@ class GetOrderRefundsTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_exception_on_non_2xx_response_code(): void
+    public function assert_exception_on_non_2xx_response_code(): void
     {
         $this->expectException(Exception::class);
 
@@ -102,10 +125,14 @@ class GetOrderRefundsTest extends AbstractGraphQlSdkTestCase
     }
 
     /**
+     * @test
+     *
+     * @return void
+     * @throws \Rvvup\Sdk\Exceptions\NetworkException
+     * @throws \JsonException
      * @throws \Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
-    public function test_network_exception_on_5xx_response_code(): void
+    public function assert_network_exception_on_5xx_response_code(): void
     {
         $this->expectException(NetworkException::class);
 
